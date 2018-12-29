@@ -1,3 +1,42 @@
+var port;
+var password;
+var lockfile;
+var fs = require('fs');
+
+function readLockFile() {
+    fs.readFile("C:/Riot Games/League of Legends/lockfile", 'utf-8', (err, data) => {
+        if (err) {
+            console.log("Windows Path Error: " + err.message);
+            fs.readFile("D:/Riot Games/League of Legends/lockfile", 'utf-8', (err, data) => {
+                if (err) {
+                    console.log("Windows Path Error: " + err.message);
+                    fs.readFile("/Applications/League of Legends.app/Contents/LoL/lockfile", 'utf-8', (err, data) => {
+                        if (err) {
+                            console.log("Mac Path Error: " + err.message);
+                            return;
+                        }
+                        lockfile = data;
+                        processLockFile();
+                    });
+                    return;
+                }
+                lockfile = data;
+                processLockFile();
+            });
+            return;
+        }
+        lockfile = data;
+        processLockFile();
+    });
+}
+
+function processLockFile() {
+    var split = lockfile.split(":");
+    port = split[2];
+    password = split[3];
+    console.log("port: " + port + ", password: " + password);
+}
+
 function draw() {
   var canvas = document.getElementById("canvas");
   var context = canvas.getContext("2d");
