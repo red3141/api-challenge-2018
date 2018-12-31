@@ -73,6 +73,11 @@ class RiotWSProtocol extends WebSocket {
     }
 }
 
+function init() {
+    readLockFile();
+    prepareImages();
+}
+
 var port;
 var password;
 var lockfile;
@@ -144,150 +149,155 @@ function handleEogStatsBlock(data) {
     }
 }
 
+var headImage;
+var hairImage;
+var longHairImage;
+var shirtImage;
+var leftSleeveImage;
+var leftArmImage;
+var rightSleeveImage;
+var rightArmImage;
+var pantsImage;
+var leftFootImage;
+var rightFootImage;
+
+function prepareImages() {
+    headImage = document.getElementById("headImage");
+    hairImage = document.getElementById("hairImage");
+    longHairImage = document.getElementById("longHairImage");
+    shirtImage = document.getElementById("shirtImage");
+    leftSleeveImage = document.getElementById("leftSleeveImage");
+    leftArmImage = document.getElementById("leftArmImage");
+    rightSleeveImage = document.getElementById("rightSleeveImage");
+    rightArmImage = document.getElementById("rightArmImage");
+    pantsImage = document.getElementById("pantsImage");
+    leftFootImage = document.getElementById("leftFootImage");
+    rightFootImage = document.getElementById("rightFootImage");
+    // uncomment this line to draw right away, instead of waiting for the end game stats to be ready
+    //draw();
+}
+
 function draw() {
-  console.log("DRAWING");
-  var canvas = document.getElementById("canvas");
-  var context = canvas.getContext("2d");
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  var image = document.getElementById("image");
+    console.log("DRAWING");
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
-  drawCharacter(context, image);
-  
-  championMasteryUpdateData = undefined;
-  eogStatsBlockData = undefined;
+    context.save();
+    context.translate(50, 100);
+    for (var i = 0; i < 5; ++i) {
+        drawCharacter(context);
+        context.translate(150, 0);
+    }
+    context.restore();
+    
+    championMasteryUpdateData = undefined;
+    eogStatsBlockData = undefined;
 }
 
-function drawCharacter(context, image) {
-  context.save();
-  context.translate(300, 10);
-  drawBody(context, image);
-  context.drawImage(image, 0, 0);
-  context.restore();
+function drawImageWithHueRotation(context, img, hueRotationDegrees) {
+    if (hueRotationDegrees === undefined) {
+        hueRotationDegrees = Math.floor(Math.random() * 360);
+    }
+    
+    context.filter = "hue-rotate(" + hueRotationDegrees + "deg)";
+    context.drawImage(img, 0, 0);
+    context.filter = "none";
 }
 
-function drawBody(context, image) {
-  context.save();
-  context.translate(-0.05 * image.width, 0.9 * image.height);
-  context.drawImage(image, 0, 0);
-  context.drawImage(image, 0, image.height);
-  drawRightArm(context, image);
-  drawLeftArm(context, image);
-  drawRightLeg(context, image);
-  drawLeftLeg(context, image);
-  context.restore();
+function drawCharacter(context) {
+    context.save();
+    var hairHueRotationDegrees = Math.floor(Math.random() * 360);
+    if (Math.random() < 0.5) {
+        drawLongHair(context, hairHueRotationDegrees);
+    }
+    context.drawImage(headImage, 0, 0);
+    drawHair(context, hairHueRotationDegrees);
+    drawBody(context);
+    context.restore();
 }
 
-function drawRightArm(context, image) {
-  context.save();
-  context.rotate(30 * Math.PI / 180);
-  context.translate(-0.5 * image.width, 0);
-  context.drawImage(image, 0, 0);
-  drawLowerRightArm(context, image);
-  context.restore();
+function drawLongHair(context, hueRotationDegrees) {
+    context.save();
+    context.translate(3, 70);
+    drawImageWithHueRotation(context, longHairImage, hueRotationDegrees);
+    context.restore();
 }
 
-function drawLowerRightArm(context, image) {
-  context.save();
-  context.translate(image.width / 2, image.height);
-  context.rotate(30 * Math.PI / 180);
-  context.translate(-0.5 * image.width, 0);
-  context.drawImage(image, 0, 0);
-  drawRightHand(context, image);
-  context.restore();
+function drawHair(context, hueRotationDegrees) {
+    context.save();
+    context.translate(-7, -5);
+    drawImageWithHueRotation(context, hairImage, hueRotationDegrees);
+    context.restore();
 }
 
-function drawRightHand(context, image) {
-  context.save();
-  context.translate(image.width / 2, image.height);
-  context.rotate(90 * Math.PI / 180);
-  context.translate(-0.5 * image.width, 0);
-  context.drawImage(image, 0, 0);
-  context.restore();
+function drawBody(context) {
+    context.save();
+    context.translate(27, headImage.height - 20);
+    var hueRotationDegrees = Math.floor(Math.random() * 360);
+    drawRightSleeve(context, hueRotationDegrees);
+    drawLeftSleeve(context, hueRotationDegrees);
+    drawPants(context);
+    drawImageWithHueRotation(context, shirtImage, hueRotationDegrees);
+    context.restore();
 }
 
-function drawLeftArm(context, image) {
-  context.save();
-  context.translate(image.width, 0);
-  context.rotate(-30 * Math.PI / 180);
-  context.translate(-0.5 * image.width, 0);
-  context.drawImage(image, 0, 0);
-  drawLowerLeftArm(context, image);
-  context.restore();
+function drawRightSleeve(context, hueRotationDegrees) {
+    context.save();
+    context.translate(10, 5);
+    var armRotationDegrees = Math.floor(Math.random() * 36);
+    context.rotate(armRotationDegrees * Math.PI / 180);
+    context.translate(-13, -4);
+    drawRightArm(context);
+    drawImageWithHueRotation(context, rightSleeveImage, hueRotationDegrees);
+    context.restore();
 }
 
-function drawLowerLeftArm(context, image) {
-  context.save();
-  context.translate(image.width / 2, image.height);
-  context.rotate(-30 * Math.PI / 180);
-  context.translate(-0.5 * image.width, 0);
-  context.drawImage(image, 0, 0);
-  drawLeftHand(context, image);
-  context.restore();
+function drawRightArm(context) {
+    context.save();
+    context.translate(-(rightArmImage.width - 15), rightSleeveImage.height - 8);
+    context.drawImage(rightArmImage, 0, 0);
+    context.restore();
 }
 
-function drawLeftHand(context, image) {
-  context.save();
-  context.translate(image.width / 2, image.height);
-  context.rotate(-90 * Math.PI / 180);
-  context.translate(-0.5 * image.width, 0);
-  context.drawImage(image, 0, 0);
-  context.restore();
+function drawLeftSleeve(context, hueRotationDegrees) {
+    context.save();
+    context.translate(shirtImage.width - 11, 3);
+    var armRotationDegrees = Math.floor(Math.random() * 31);
+    context.rotate(-armRotationDegrees * Math.PI / 180);
+    context.translate(-7, -3);
+    drawLeftArm(context);
+    drawImageWithHueRotation(context, leftSleeveImage, hueRotationDegrees);
+    context.restore();
 }
 
-function drawRightLeg(context, image) {
-  context.save();
-  context.translate(0.2 * image.width, 1.8 * image.height);
-  context.rotate(45 * Math.PI / 180);
-  context.translate(-0.5 * image.width, 0);
-  context.drawImage(image, 0, 0);
-  drawRightLowerLeg(context, image);
-  context.restore();
+function drawLeftArm(context) {
+    context.save();
+    context.translate(leftSleeveImage.width - 11, leftSleeveImage.height - 15);
+    context.drawImage(leftArmImage, 0, 0);
+    context.restore();
 }
 
-function drawRightLowerLeg(context, image) {
-  context.save();
-  context.translate(0.5 * image.width, image.height);
-  context.rotate(-45 * Math.PI / 180);
-  context.translate(-0.5 * image.width, 0);
-  context.drawImage(image, 0, 0);
-  drawRightFoot(context, image);
-  context.restore();
+function drawPants(context) {
+    context.save();
+    context.translate(-13, shirtImage.height - 8);
+    drawImageWithHueRotation(context, pantsImage);
+    drawRightFoot(context);
+    drawLeftFoot(context);
+    context.drawImage(pantsImage, 0, 0);
+    context.restore();
 }
 
-function drawRightFoot(context, image) {
-  context.save();
-  context.translate(0.5 * image.width, 0.5 * image.height);
-  context.rotate(90 * Math.PI / 180);
-  context.translate(0, 0);
-  context.drawImage(image, 0, 0);
-  context.restore();
+function drawRightFoot(context) {
+    context.save();
+    context.translate(-2, pantsImage.height - 9);
+    context.drawImage(rightFootImage, 0, 0);
+    context.restore();
 }
 
-function drawLeftLeg(context, image) {
-  context.save();
-  context.translate(0.8 * image.width, 1.8 * image.height);
-  context.rotate(-45 * Math.PI / 180);
-  context.translate(-0.5 * image.width, 0);
-  context.drawImage(image, 0, 0);
-  drawLeftLowerLeg(context, image);
-  context.restore();
-}
-
-function drawLeftLowerLeg(context, image) {
-  context.save();
-  context.translate(0.5 * image.width, image.height);
-  context.rotate(45 * Math.PI / 180);
-  context.translate(-0.5 * image.width, 0);
-  context.drawImage(image, 0, 0);
-  drawLeftFoot(context, image);
-  context.restore();
-}
-
-function drawLeftFoot(context, image) {
-  context.save();
-  context.translate(0.5 * image.width, 0.5 * image.height);
-  context.rotate(-90 * Math.PI / 180);
-  context.translate(- image.width, 0);
-  context.drawImage(image, 0, 0);
-  context.restore();
+function drawLeftFoot(context) {
+    context.save();
+    context.translate(pantsImage.width - 27, pantsImage.height - 7);
+    context.drawImage(leftFootImage, 0, 0);
+    context.restore();
 }
