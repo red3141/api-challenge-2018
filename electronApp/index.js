@@ -174,7 +174,7 @@ function prepareImages() {
     leftFootImage = document.getElementById("leftFootImage");
     rightFootImage = document.getElementById("rightFootImage");
     // uncomment this line to draw right away, instead of waiting for the end game stats to be ready
-    //draw();
+    draw();
 }
 
 function draw() {
@@ -220,20 +220,20 @@ function drawCharacter(context) {
 function drawLongHair(context, hueRotationDegrees) {
     context.save();
     context.translate(3, 70);
-    drawImageWithHueRotation(context, longHairImage, hueRotationDegrees);
+    //drawImageWithHueRotation(context, longHairImage, hueRotationDegrees);
     context.restore();
 }
 
 function drawHair(context, hueRotationDegrees) {
     context.save();
     context.translate(-7, -5);
-    drawImageWithHueRotation(context, hairImage, hueRotationDegrees);
+    //drawImageWithHueRotation(context, hairImage, hueRotationDegrees);
     context.restore();
 }
 
 function drawBody(context) {
     context.save();
-    context.translate(27, headImage.height - 20);
+    context.translate(27, headImage.height - 14);
     var hueRotationDegrees = Math.floor(Math.random() * 360);
     drawRightSleeve(context, hueRotationDegrees);
     drawLeftSleeve(context, hueRotationDegrees);
@@ -244,10 +244,7 @@ function drawBody(context) {
 
 function drawRightSleeve(context, hueRotationDegrees) {
     context.save();
-    context.translate(10, 5);
-    var armRotationDegrees = Math.floor(Math.random() * 36);
-    context.rotate(armRotationDegrees * Math.PI / 180);
-    context.translate(-13, -4);
+    context.translate(-6, 1);
     drawRightArm(context);
     drawImageWithHueRotation(context, rightSleeveImage, hueRotationDegrees);
     context.restore();
@@ -255,17 +252,14 @@ function drawRightSleeve(context, hueRotationDegrees) {
 
 function drawRightArm(context) {
     context.save();
-    context.translate(-(rightArmImage.width - 15), rightSleeveImage.height - 8);
+    context.translate(-(rightArmImage.width - 18), rightSleeveImage.height - 8);
     context.drawImage(rightArmImage, 0, 0);
     context.restore();
 }
 
 function drawLeftSleeve(context, hueRotationDegrees) {
     context.save();
-    context.translate(shirtImage.width - 11, 3);
-    var armRotationDegrees = Math.floor(Math.random() * 31);
-    context.rotate(-armRotationDegrees * Math.PI / 180);
-    context.translate(-7, -3);
+    context.translate(shirtImage.width - 17, 0);
     drawLeftArm(context);
     drawImageWithHueRotation(context, leftSleeveImage, hueRotationDegrees);
     context.restore();
@@ -273,31 +267,30 @@ function drawLeftSleeve(context, hueRotationDegrees) {
 
 function drawLeftArm(context) {
     context.save();
-    context.translate(leftSleeveImage.width - 11, leftSleeveImage.height - 15);
+    context.translate(leftSleeveImage.width - 18, leftSleeveImage.height - 10);
     context.drawImage(leftArmImage, 0, 0);
     context.restore();
 }
 
 function drawPants(context) {
     context.save();
-    context.translate(-13, shirtImage.height - 8);
-    drawImageWithHueRotation(context, pantsImage);
+    context.translate(-4, shirtImage.height - 7);
     drawRightFoot(context);
     drawLeftFoot(context);
-    context.drawImage(pantsImage, 0, 0);
+    drawImageWithHueRotation(context, pantsImage);
     context.restore();
 }
 
 function drawRightFoot(context) {
     context.save();
-    context.translate(-2, pantsImage.height - 9);
+    context.translate(0, pantsImage.height - 9);
     context.drawImage(rightFootImage, 0, 0);
     context.restore();
 }
 
 function drawLeftFoot(context) {
     context.save();
-    context.translate(pantsImage.width - 27, pantsImage.height - 7);
+    context.translate(pantsImage.width - 24, pantsImage.height - 9);
     context.drawImage(leftFootImage, 0, 0);
     context.restore();
 }
