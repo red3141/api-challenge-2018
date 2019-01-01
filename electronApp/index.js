@@ -219,15 +219,15 @@ function drawCharacter(context) {
 
 function drawLongHair(context, hueRotationDegrees) {
     context.save();
-    context.translate(3, 70);
-    //drawImageWithHueRotation(context, longHairImage, hueRotationDegrees);
+    context.translate(6, 75);
+    drawImageWithHueRotation(context, longHairImage, hueRotationDegrees);
     context.restore();
 }
 
 function drawHair(context, hueRotationDegrees) {
     context.save();
-    context.translate(-7, -5);
-    //drawImageWithHueRotation(context, hairImage, hueRotationDegrees);
+    context.translate(-9, -5);
+    drawImageWithHueRotation(context, hairImage, hueRotationDegrees);
     context.restore();
 }
 
