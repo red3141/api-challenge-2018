@@ -205,29 +205,72 @@ function drawImageWithHueRotation(context, img, hueRotationDegrees) {
     context.filter = "none";
 }
 
+function generateRandomHairColor() {
+    var random = Math.floor(Math.random() * 6);
+    if (random == 0) {
+        return "blonde";
+    } else if (random == 1) {
+        return "brown";
+    } else if (random == 2) {
+        return "black";
+    } else if (random == 3) {
+        return "white";
+    } else if (random == 4) {
+        return "grey";
+    } else if (random == 5) {
+        return "red";
+    }
+}
+
+function drawHairWithColor(context, hairImage, hairColor) {
+    var filter = "none";
+    
+    if (hairColor === undefined) {
+        hairColor = generateRandomHairColor();
+    }
+    
+    if (hairColor === "blonde") {
+        filter = "hue-rotate(-170deg) brightness(160%)";
+    } else if (hairColor === "brown") {
+        filter = "hue-rotate(-195deg) brightness(65%)";
+    } else if (hairColor === "black") {
+        filter = "saturate(0%) brightness(30%)";
+    } else if (hairColor === "white") {
+        filter = "saturate(0%) brightness(190%)";
+    } else if (hairColor === "grey") {
+        filter = "saturate(0%) brightness(130%)";
+    } else if (hairColor === "red") {
+        filter = "hue-rotate(-230deg) saturate(170%)";
+    }
+    
+    context.filter = filter;
+    context.drawImage(hairImage, 0, 0);
+    context.filter = "none";
+}
+
 function drawCharacter(context) {
     context.save();
-    var hairHueRotationDegrees = Math.floor(Math.random() * 360);
+    var hairColor = generateRandomHairColor();
     if (Math.random() < 0.5) {
-        drawLongHair(context, hairHueRotationDegrees);
+        drawLongHair(context, hairColor);
     }
     context.drawImage(headImage, 0, 0);
-    drawHair(context, hairHueRotationDegrees);
+    drawHair(context, hairColor);
     drawBody(context);
     context.restore();
 }
 
-function drawLongHair(context, hueRotationDegrees) {
+function drawLongHair(context, hairColor) {
     context.save();
     context.translate(6, 75);
-    drawImageWithHueRotation(context, longHairImage, hueRotationDegrees);
+    drawHairWithColor(context, longHairImage, hairColor);
     context.restore();
 }
 
-function drawHair(context, hueRotationDegrees) {
+function drawHair(context, hairColor) {
     context.save();
     context.translate(-9, -5);
-    drawImageWithHueRotation(context, hairImage, hueRotationDegrees);
+    drawHairWithColor(context, hairImage, hairColor);
     context.restore();
 }
 
