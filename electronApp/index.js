@@ -189,6 +189,7 @@ function draw() {
         championId = 0;
         if (i == 0) { championId = 141; }
         if (i == 1) { championId = 32; }
+        if (i == 2) { championId = 119; }
         drawCharacter(context, championId.toString());
         context.translate(150, 0);
     }
@@ -257,7 +258,11 @@ function drawAddOn(context, addOnDetails) {
     }
     context.save();
     context.translate(addOnDetails.translationX, addOnDetails.translationY);
-    context.drawImage(document.getElementById(addOnDetails.id), 0, 0);
+    if (addOnDetails.drawAsHair) {
+        drawHairWithColor(context, document.getElementById(addOnDetails.id), addOnDetails.hair);
+    } else {
+        context.drawImage(document.getElementById(addOnDetails.id), 0, 0);
+    }
     context.restore();
 }
 
@@ -270,15 +275,20 @@ function drawCharacter(context, championId) {
     } else {
         hairColor = generateRandomHairColor();
     }
-    if (Math.random() < 0.5) {
+    if (champion) {
+        if (champion.longHair) {
+            drawLongHair(context, hairColor);
+        }
+    } else if (Math.random() < 0.5) {
         drawLongHair(context, hairColor);
     }
+    
     context.drawImage(headImage, 0, 0);
+    drawHair(context, hairColor);
+    drawBody(context, champion);
     if (champion) {
         drawAddOn(context, champion.addOnAfterHead);
     }
-    drawHair(context, hairColor);
-    drawBody(context, champion);
     context.restore();
 }
 
