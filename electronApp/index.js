@@ -190,6 +190,7 @@ function draw() {
         if (i == 0) { championId = 141; }
         if (i == 1) { championId = 32; }
         if (i == 2) { championId = 119; }
+        if (i == 3) { championId = 432; }
         drawCharacter(context, championId.toString());
         context.translate(150, 0);
     }
