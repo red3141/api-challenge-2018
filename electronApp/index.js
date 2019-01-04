@@ -191,6 +191,7 @@ function draw() {
         if (i == 1) { championId = 32; }
         if (i == 2) { championId = 119; }
         if (i == 3) { championId = 432; }
+        if (i == 4) { championId = 22; }
         drawCharacter(context, championId.toString());
         context.translate(150, 0);
     }
@@ -318,46 +319,56 @@ function drawBody(context, champion) {
     context.translate(27, headImage.height - 14);
     var hueRotationDegrees = Math.floor(Math.random() * 360);
     drawPants(context, champion);
-    drawRightSleeve(context, hueRotationDegrees, champion);
-    drawLeftSleeve(context, hueRotationDegrees, champion);
+    drawRightSleeve(context, hueRotationDegrees, champion, false);
+    drawLeftSleeve(context, hueRotationDegrees, champion, false);
     drawImageWithHueRotation(context, shirtImage, hueRotationDegrees);
     if (champion) {
         drawAddOn(context, champion.addOnAfterShirt);
     }
+    drawRightSleeve(context, hueRotationDegrees, champion, true);
+    drawLeftSleeve(context, hueRotationDegrees, champion, true);
     context.restore();
 }
 
-function drawRightSleeve(context, hueRotationDegrees, champion) {
+function drawRightSleeve(context, hueRotationDegrees, champion, drawAddOns) {
     context.save();
     context.translate(-6, 1);
-    drawRightArm(context, champion);
-    drawImageWithHueRotation(context, rightSleeveImage, hueRotationDegrees);
+    drawRightArm(context, champion, drawAddOns);
+    if (!drawAddOns) {
+        drawImageWithHueRotation(context, rightSleeveImage, hueRotationDegrees);
+    }
     context.restore();
 }
 
-function drawRightArm(context, champion) {
+function drawRightArm(context, champion, drawAddOns) {
     context.save();
     context.translate(-(rightArmImage.width - 18), rightSleeveImage.height - 8);
-    context.drawImage(rightArmImage, 0, 0);
-    if (champion) {
+    if (!drawAddOns) {
+        context.drawImage(rightArmImage, 0, 0);
+    }
+    if (champion && drawAddOns) {
         drawAddOn(context, champion.addOnAfterRightArm);
     }
     context.restore();
 }
 
-function drawLeftSleeve(context, hueRotationDegrees, champion) {
+function drawLeftSleeve(context, hueRotationDegrees, champion, drawAddOns) {
     context.save();
     context.translate(shirtImage.width - 17, 0);
-    drawLeftArm(context, champion);
-    drawImageWithHueRotation(context, leftSleeveImage, hueRotationDegrees);
+    drawLeftArm(context, champion, drawAddOns);
+    if (!drawAddOns) {
+        drawImageWithHueRotation(context, leftSleeveImage, hueRotationDegrees);
+    }
     context.restore();
 }
 
-function drawLeftArm(context, champion) {
+function drawLeftArm(context, champion, drawAddOns) {
     context.save();
     context.translate(leftSleeveImage.width - 18, leftSleeveImage.height - 10);
-    context.drawImage(leftArmImage, 0, 0);
-    if (champion) {
+    if (!drawAddOns) {
+        context.drawImage(leftArmImage, 0, 0);
+    }
+    if (champion && drawAddOns) {
         drawAddOn(context, champion.addOnAfterLeftArm);
     }
     context.restore();
