@@ -317,9 +317,9 @@ function drawBody(context, champion) {
     context.save();
     context.translate(27, headImage.height - 14);
     var hueRotationDegrees = Math.floor(Math.random() * 360);
-    drawRightSleeve(context, hueRotationDegrees);
-    drawLeftSleeve(context, hueRotationDegrees);
     drawPants(context, champion);
+    drawRightSleeve(context, hueRotationDegrees, champion);
+    drawLeftSleeve(context, hueRotationDegrees, champion);
     drawImageWithHueRotation(context, shirtImage, hueRotationDegrees);
     if (champion) {
         drawAddOn(context, champion.addOnAfterShirt);
@@ -327,33 +327,39 @@ function drawBody(context, champion) {
     context.restore();
 }
 
-function drawRightSleeve(context, hueRotationDegrees) {
+function drawRightSleeve(context, hueRotationDegrees, champion) {
     context.save();
     context.translate(-6, 1);
-    drawRightArm(context);
+    drawRightArm(context, champion);
     drawImageWithHueRotation(context, rightSleeveImage, hueRotationDegrees);
     context.restore();
 }
 
-function drawRightArm(context) {
+function drawRightArm(context, champion) {
     context.save();
     context.translate(-(rightArmImage.width - 18), rightSleeveImage.height - 8);
     context.drawImage(rightArmImage, 0, 0);
+    if (champion) {
+        drawAddOn(context, champion.addOnAfterRightArm);
+    }
     context.restore();
 }
 
-function drawLeftSleeve(context, hueRotationDegrees) {
+function drawLeftSleeve(context, hueRotationDegrees, champion) {
     context.save();
     context.translate(shirtImage.width - 17, 0);
-    drawLeftArm(context);
+    drawLeftArm(context, champion);
     drawImageWithHueRotation(context, leftSleeveImage, hueRotationDegrees);
     context.restore();
 }
 
-function drawLeftArm(context) {
+function drawLeftArm(context, champion) {
     context.save();
     context.translate(leftSleeveImage.width - 18, leftSleeveImage.height - 10);
     context.drawImage(leftArmImage, 0, 0);
+    if (champion) {
+        drawAddOn(context, champion.addOnAfterLeftArm);
+    }
     context.restore();
 }
 
