@@ -207,7 +207,7 @@ function draw() {
     context.translate(50, 100);
     for (var i = 0; i < 5; ++i) {
         championId = 0;
-        if (i == 0) { championId = 141; }
+        if (i == 0) { championId = 15; }
         if (i == 1) { championId = 32; }
         if (i == 2) { championId = 119; }
         if (i == 3) { championId = 432; }
