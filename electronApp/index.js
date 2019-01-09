@@ -162,6 +162,10 @@ var rightArmBentImage;
 var pantsImage;
 var leftFootImage;
 var rightFootImage;
+var faceHappyImage;
+var faceDeadImage;
+var faceFrustratedImage;
+var faceDealWithItImage;
 var armData;
 
 function prepareImages() {
@@ -178,6 +182,11 @@ function prepareImages() {
     pantsImage = document.getElementById("pantsImage");
     leftFootImage = document.getElementById("leftFootImage");
     rightFootImage = document.getElementById("rightFootImage");
+    
+    faceHappyImage = document.getElementById("faceHappyImage");
+    faceDeadImage = document.getElementById("faceDeadImage");
+    faceFrustratedImage = document.getElementById("faceFrustratedImage");
+    faceDealWithItImage = document.getElementById("faceDealWithItImage");
     
     armData = {"rightArmStraight": {"image": rightArmImage, "translationX": -30, "translationY": 22, "handX": 14, "handY": 60},
                "leftArmStraight": {"image": leftArmImage, "translationX": 7, "translationY": 20, "handX": 32, "handY": 60},
@@ -317,12 +326,28 @@ function drawCharacter(context, championId) {
     }
     
     context.drawImage(headImage, 0, 0);
+    if (!champion.hideFace) {
+        drawFacialExpression(context, championId);
+    }
     drawHair(context, hairColor);
     drawBody(context, champion, championId);
     if (champion) {
         drawAddOn(context, champion.addOnAfterHead);
     }
     context.restore();
+}
+
+function drawFacialExpression(context, championId) {
+    var facialExpression = faceHappyImage;
+    var championIdInt = parseInt(championId);
+    if (championIdInt < 50) {
+        facialExpression = faceFrustratedImage;
+    } else if (championIdInt < 125) {
+        facialExpression = faceDeadImage;
+    } else if (championIdInt < 200) {
+        facialExpression = faceDealWithItImage;
+    }
+    context.drawImage(facialExpression, 0, 0);
 }
 
 function drawLongHair(context, hairColor) {
