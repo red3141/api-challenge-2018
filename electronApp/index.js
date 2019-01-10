@@ -209,7 +209,7 @@ function draw() {
         championId = 0;
         if (i == 0) { championId = 103; }
         if (i == 1) { championId = 266; }
-        if (i == 2) { championId = 119; }
+        if (i == 2) { championId = 84; }
         if (i == 3) { championId = 432; }
         if (i == 4) { championId = 22; }
         drawCharacter(context, championId.toString());
