@@ -210,7 +210,7 @@ function draw() {
         if (i == 0) { championId = 103; }
         if (i == 1) { championId = 266; }
         if (i == 2) { championId = 84; }
-        if (i == 3) { championId = 432; }
+        if (i == 3) { championId = 12; }
         if (i == 4) { championId = 22; }
         drawCharacter(context, championId.toString());
         context.translate(200, 0);
@@ -267,6 +267,8 @@ function drawHairWithColor(context, hairImage, hairColor) {
         filter = "saturate(0%) brightness(130%)";
     } else if (hairColor === "red") {
         filter = "hue-rotate(-230deg) saturate(170%)";
+    } else if (hairColor === "purple") {
+        filter = "hue-rotate(40deg) saturate(120%) brightness(75%)";
     }
     
     context.filter = filter;
