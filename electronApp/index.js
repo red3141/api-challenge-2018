@@ -207,13 +207,13 @@ function draw() {
     context.translate(50, 100);
     for (var i = 0; i < 5; ++i) {
         championId = 0;
-        if (i == 0) { championId = 15; }
-        if (i == 1) { championId = 32; }
+        if (i == 0) { championId = 103; }
+        if (i == 1) { championId = 266; }
         if (i == 2) { championId = 119; }
         if (i == 3) { championId = 432; }
         if (i == 4) { championId = 22; }
         drawCharacter(context, championId.toString());
-        context.translate(150, 0);
+        context.translate(200, 0);
     }
     context.restore();
     
@@ -299,6 +299,9 @@ function drawArmAddOn(context, armType, addOnDetails) {
     if (armDetails.rotation) {
         context.rotate(armDetails.rotation * Math.PI / 180);
     }
+    if (addOnDetails.rotation) {
+        context.rotate(addOnDetails.rotation * Math.PI / 180);
+    }
     context.translate(-addOnDetails.handX, -addOnDetails.handY);
     if (addOnDetails.drawAsHair) {
         drawHairWithColor(context, document.getElementById(addOnDetails.id), addOnDetails.hair);
@@ -317,11 +320,12 @@ function drawCharacter(context, championId) {
     } else {
         hairColor = generateRandomHairColor();
     }
+    
     if (champion) {
-        if (champion.longHair) {
-            drawLongHair(context, hairColor);
-        }
-    } else if (Math.random() < 0.5) {
+        drawAddOn(context, champion.addOnBeforeHead);
+    }
+    
+    if (champion && champion.longHair) {
         drawLongHair(context, hairColor);
     }
     

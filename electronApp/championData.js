@@ -1,4 +1,6 @@
 const championData = {
+    "266": /* Aatrox */ {"hair": "black", "addOnBeforeHead": {"id": "aatroxBeforeHead", "translationX": -48, "translationY": 70}, "addOnAfterRightArm": {"id": "aatroxRightHand", "handX": 19, "handY": 65, "rotation": 0}},
+    "103": /* Ahri */ {"hair": "black", "longHair": true, "addOnBeforeHead": {"id": "ahriBeforeHead", "translationX": -87, "translationY": 40}, "addOnAfterHead": {"id": "ahriHead", "translationX": -17, "translationY": -8}, "addOnAfterRightArm": {"id": "ahriRightHand", "handX": 33, "handY": 70}},
     "32": /* Amumu */ {"hair": "none", "addOnAfterHead": {"id": "amumuHead", "translationX": -1, "translationY": -1}, "addOnAfterShirt": {"id": "amumuShirt", "translationX": -1, "translationY": 21}, "addOnAfterPants": {"id": "amumuPants", "translationX": -1, "translationY": 2}},
     "22": /* Ashe */ {"hair": "white", "longHair": true, "addOnAfterRightArm": {"id": "asheRightHand", "handX": 54, "handY": 132}},
     "432": /* Bard */ {"hair": "none", "hideFace": true, "addOnAfterHead": {"id": "bardHead", "translationX": -15, "translationY": -31}},
