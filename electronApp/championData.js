@@ -11,5 +11,6 @@ const championData = {
     "13": /* Ryze */ {"hair": "none", "addOnBeforeHead": {"id": "ryzeBeforeHead", "translationX": -5, "translationY": 75}},
     "15": /* Sivir */ {"hair": "black", "longHair": true, "addOnAfterLeftArm": {"id": "sivirLeftHand", "handX": 67, "handY": 60}},
     "17": /* Teemo */ {"hair": "none", "addOnAfterHead": {"id": "teemoHead", "translationX": -15, "translationY": -33}},
-    "141": /* Zac */ {"hair": "none", "expression": "none", "addOnAfterHead": {"id": "zacHead", "translationX": 1, "translationY": -76}},
+    "141": /* Zac */ {"hair": "none", "addOnAfterHead": {"id": "zacHead", "translationX": 1, "translationY": -76}},
+    "115": /* Ziggs */ {"hair": "brown", "addOnAfterRightArm": {"id": "ziggsHand", "handX": 50, "handY": 89}, "addOnAfterLeftArm": {"id": "ziggsHand", "handX": 20, "handY": 89}},
 };
