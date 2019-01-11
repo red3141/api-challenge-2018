@@ -209,7 +209,7 @@ function draw() {
         championId = 0;
         if (i == 0) { championId = 17; }
         if (i == 1) { championId = 115; }
-        if (i == 2) { championId = 84; }
+        if (i == 2) { championId = 92; }
         if (i == 3) { championId = 48; }
         if (i == 4) { championId = 13; }
         drawCharacter(context, championId.toString());
@@ -400,7 +400,7 @@ function drawRightSleeve(context, hueRotationDegrees, champion, championId, draw
     context.save();
     context.translate(-6, 1);
     armType = "rightArmStraight";
-    if (championId < 100) {
+    if (true || championId < 100) {
         // TODO: replace with an actual condition
         armType = "rightArmBent";
     }
@@ -429,7 +429,7 @@ function drawLeftSleeve(context, hueRotationDegrees, champion, championId, drawA
     armType = "leftArmStraight";
     if (championId < 100) {
         // TODO: replace with an actual condition
-        armType = "leftArmBent";
+        //armType = "leftArmBent";
     }
     drawLeftArm(context, champion, armType, drawAddOns);
     if (!drawAddOns) {

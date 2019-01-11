@@ -8,10 +8,11 @@ const championData = {
     "22": /* Ashe */ {"hair": "white", "longHair": true, "addOnAfterRightArm": {"id": "asheRightHand", "handX": 54, "handY": 132}},
     "432": /* Bard */ {"hair": "none", "hideFace": true, "addOnAfterHead": {"id": "bardHead", "translationX": -15, "translationY": -31}},
     "119": /* Draven */ {"hair": "brown", "longHair": false, "addOnAfterHead": {"id": "dravenHead", "translationX": 14, "translationY": 78, "drawAsHair": true, "hair": "brown"}, "addOnAfterRightArm": {"id": "dravenRightHand", "handX": 101, "handY": 140}, "addOnAfterLeftArm": {"id": "dravenLeftHand", "handX": 29, "handY": 145}},
+    "92": /* Riven */ {"hair": "white", "addOnAfterLeftArm": {"id": "rivenLeftHand", "handX": 17, "handY": 241, "rotation": 95}},
     "13": /* Ryze */ {"hair": "none", "addOnBeforeHead": {"id": "ryzeBeforeHead", "translationX": -5, "translationY": 75}},
     "15": /* Sivir */ {"hair": "black", "longHair": true, "addOnAfterLeftArm": {"id": "sivirLeftHand", "handX": 67, "handY": 60}},
     "17": /* Teemo */ {"hair": "none", "addOnAfterHead": {"id": "teemoHead", "translationX": -15, "translationY": -33}},
-    "48": /* Trundle */ {"hair": "darkPink", "addOnAfterLeftArm": {"id": "trundleLeftHand", "handX": 65, "handY": 186}},
+    "48": /* Trundle */ {"hair": "darkPink", "addOnAfterLeftArm": {"id": "trundleLeftHand", "handX": 65, "handY": 186, "rotation": 20}},
     "141": /* Zac */ {"hair": "none", "addOnAfterHead": {"id": "zacHead", "translationX": 1, "translationY": -76}},
     "115": /* Ziggs */ {"hair": "brown", "addOnAfterRightArm": {"id": "ziggsHand", "handX": 50, "handY": 89}, "addOnAfterLeftArm": {"id": "ziggsHand", "handX": 20, "handY": 89}},
 };
