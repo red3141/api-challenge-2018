@@ -11,6 +11,7 @@ const championData = {
     "92": /* Riven */ {"hair": "white", "addOnAfterLeftArm": {"id": "rivenLeftHand", "handX": 17, "handY": 241, "rotation": 95}},
     "13": /* Ryze */ {"hair": "none", "addOnBeforeHead": {"id": "ryzeBeforeHead", "translationX": -5, "translationY": 75}},
     "15": /* Sivir */ {"hair": "black", "longHair": true, "addOnAfterLeftArm": {"id": "sivirLeftHand", "handX": 67, "handY": 60}},
+    "134": /* Syndra */ {"hair": "white", "longHair": true, "addOnAfterHead": {"id": "syndraHead", "translationX": -55, "translationY": -75}},
     "17": /* Teemo */ {"hair": "none", "addOnAfterHead": {"id": "teemoHead", "translationX": -15, "translationY": -33}},
     "48": /* Trundle */ {"hair": "darkPink", "addOnAfterLeftArm": {"id": "trundleLeftHand", "handX": 65, "handY": 186, "rotation": 20}},
     "141": /* Zac */ {"hair": "none", "addOnAfterHead": {"id": "zacHead", "translationX": 1, "translationY": -76}},

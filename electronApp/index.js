@@ -211,7 +211,7 @@ function draw() {
         if (i == 1) { championId = 115; }
         if (i == 2) { championId = 103; }
         if (i == 3) { championId = 22; }
-        if (i == 4) { championId = 119; }
+        if (i == 4) { championId = 134; }
         drawCharacter(context, championId.toString());
         context.translate(170, 0);
     }
