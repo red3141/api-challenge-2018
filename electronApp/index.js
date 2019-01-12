@@ -204,14 +204,14 @@ function draw() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     context.save();
-    context.translate(50, 100);
+    context.translate(70, 100);
     for (var i = 0; i < 5; ++i) {
         championId = 0;
-        if (i == 0) { championId = 17; }
+        if (i == 0) { championId = 1; }
         if (i == 1) { championId = 115; }
-        if (i == 2) { championId = 92; }
-        if (i == 3) { championId = 48; }
-        if (i == 4) { championId = 13; }
+        if (i == 2) { championId = 103; }
+        if (i == 3) { championId = 22; }
+        if (i == 4) { championId = 119; }
         drawCharacter(context, championId.toString());
         context.translate(170, 0);
     }
@@ -294,7 +294,7 @@ function drawAddOn(context, addOnDetails) {
     context.restore();
 }
 
-function drawArmAddOn(context, armType, addOnDetails) {
+function drawArmAddOn(context, armType, armRaisedCompensationRotation, addOnDetails) {
     armDetails = armData[armType];
     if (!addOnDetails || !armDetails) {
         return;
@@ -308,6 +308,7 @@ function drawArmAddOn(context, armType, addOnDetails) {
     if (addOnDetails.rotation) {
         context.rotate(addOnDetails.rotation * Math.PI / 180);
     }
+    context.rotate(armRaisedCompensationRotation * Math.PI / 180);
     context.translate(-addOnDetails.handX, -addOnDetails.handY);
     if (addOnDetails.drawAsHair) {
         drawHairWithColor(context, document.getElementById(addOnDetails.id), addOnDetails.hair);
@@ -400,25 +401,30 @@ function drawRightSleeve(context, hueRotationDegrees, champion, championId, draw
     context.save();
     context.translate(-6, 1);
     armType = "rightArmStraight";
-    if (true || championId < 100) {
+    if (championId < 100) {
         // TODO: replace with an actual condition
-        armType = "rightArmBent";
+        //armType = "rightArmBent";
     }
-    drawRightArm(context, champion, armType, drawAddOns);
+    armRaised = false;
+    if (armRaised) {
+        context.rotate(105 * Math.PI / 180);
+        context.translate(-10, -26);
+    }
+    drawRightArm(context, champion, armType, armRaised, drawAddOns);
     if (!drawAddOns) {
         drawImageWithHueRotation(context, rightSleeveImage, hueRotationDegrees);
     }
     context.restore();
 }
 
-function drawRightArm(context, champion, armType, drawAddOns) {
+function drawRightArm(context, champion, armType, armRaised, drawAddOns) {
     context.save();
     context.translate(armData[armType].translationX, armData[armType].translationY);
     if (!drawAddOns) {
         context.drawImage(armData[armType].image, 0, 0);
     }
     if (champion && drawAddOns) {
-        drawArmAddOn(context, armType, champion.addOnAfterRightArm);
+        drawArmAddOn(context, armType, armRaised ? -90 : 0, champion.addOnAfterRightArm);
     }
     context.restore();
 }
@@ -431,21 +437,26 @@ function drawLeftSleeve(context, hueRotationDegrees, champion, championId, drawA
         // TODO: replace with an actual condition
         //armType = "leftArmBent";
     }
-    drawLeftArm(context, champion, armType, drawAddOns);
+    armRaised = false;
+    if (armRaised) {
+        context.rotate(-105 * Math.PI / 180);
+        context.translate(-20, -5);
+    }
+    drawLeftArm(context, champion, armType, armRaised, drawAddOns);
     if (!drawAddOns) {
         drawImageWithHueRotation(context, leftSleeveImage, hueRotationDegrees);
     }
     context.restore();
 }
 
-function drawLeftArm(context, champion, armType, drawAddOns) {
+function drawLeftArm(context, champion, armType, armRaised, drawAddOns) {
     context.save();
     context.translate(armData[armType].translationX, armData[armType].translationY);
     if (!drawAddOns) {
         context.drawImage(armData[armType].image, 0, 0);
     }
     if (champion && drawAddOns) {
-        drawArmAddOn(context, armType, champion.addOnAfterLeftArm);
+        drawArmAddOn(context, armType, armRaised ? 90 : 0, champion.addOnAfterLeftArm);
     }
     context.restore();
 }
