@@ -292,12 +292,19 @@ function processEogStatsBlockData(data) {
                 processedPlayer.leftArm = "leftArmStraight";
                 processedPlayer.rightArm = "rightArmStraight";
                 processedPlayer.layingDown = false;
-            } else if (celebrationLevel > 35) {
+            } else if (celebrationLevel > 30) {
                 processedPlayer.facialExpression = faceFrustratedImage;
                 processedPlayer.leftArmRaised = false;
                 processedPlayer.rightArmRaised = false;
                 processedPlayer.leftArm = "leftArmBent";
                 processedPlayer.rightArm = "rightArmBent";
+                processedPlayer.layingDown = false;
+            } else if (celebrationLevel > 40) {
+                processedPlayer.facialExpression = faceFrustratedImage;
+                processedPlayer.leftArmRaised = true;
+                processedPlayer.rightArmRaised = true;
+                processedPlayer.leftArm = "leftArmStraight";
+                processedPlayer.rightArm = "rightArmStraight";
                 processedPlayer.layingDown = false;
             } else {
                 processedPlayer.facialExpression = faceDeadImage;
@@ -364,7 +371,7 @@ function prepareImages() {
 function draw() {
     eogStatsBlockDataProcessed = [
         {
-            "championId": 61,
+            "championId": 64,
             "facialExpression": faceDealWithItImage,
             "leftArmRaised": true,
             "rightArmRaised": true,
