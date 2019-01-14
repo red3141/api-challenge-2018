@@ -11,6 +11,7 @@ const championData = {
     "64": /* Lee Sin */ {"hair": "none", "addOnAfterHead": {"id": "leesinHead", "translationX": 0, "translationY": 37}},
     "61": /* Orianna */ {"hair": "blonde", "longHair": true, "addOnAfterHead": {"id": "oriannaHead", "translationX": 80, "translationY": -20}},
     "80": /* Pantheon */ {"hair": "black", "addOnAfterLeftArm": {"id": "pantheonRightHand", "handX": 67, "handY": 67}},
+    "78": /* Poppy */ {"hair": "white", "longHair": true, "addOnAfterRightArm": {"id": "poppyRightHand", "handX": 40, "handY": 59, "rotation": 165}},
     "555": /* Pyke */ {"hair": "none", "addOnAfterHead": {"id": "pykeHead", "translationX": 4, "translationY": 78}},
     "92": /* Riven */ {"hair": "white", "addOnAfterLeftArm": {"id": "rivenLeftHand", "handX": 17, "handY": 241, "rotation": 95}},
     "13": /* Ryze */ {"hair": "none", "addOnBeforeHead": {"id": "ryzeBeforeHead", "translationX": -5, "translationY": 75}},
