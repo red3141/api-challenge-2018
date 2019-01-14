@@ -9,6 +9,7 @@ const championData = {
     "432": /* Bard */ {"hair": "none", "hideFace": true, "addOnAfterHead": {"id": "bardHead", "translationX": -15, "translationY": -31}},
     "119": /* Draven */ {"hair": "brown", "longHair": false, "addOnAfterHead": {"id": "dravenHead", "translationX": 14, "translationY": 78, "drawAsHair": true, "hair": "brown"}, "addOnAfterRightArm": {"id": "dravenRightHand", "handX": 101, "handY": 140}, "addOnAfterLeftArm": {"id": "dravenLeftHand", "handX": 29, "handY": 145}},
     "64": /* Lee Sin */ {"hair": "none", "addOnAfterHead": {"id": "leesinHead", "translationX": 0, "translationY": 37}},
+    "56": /* Nocturne */ {"hair": "black", "addOnAfterRightArm": {"id": "nocturneRightArm", "handX": 70, "handY": 40}, "addOnAfterLeftArm": {"id": "nocturneLeftArm", "handX": 10, "handY": 40}},
     "61": /* Orianna */ {"hair": "blonde", "longHair": true, "addOnAfterHead": {"id": "oriannaHead", "translationX": 80, "translationY": -20}},
     "80": /* Pantheon */ {"hair": "black", "addOnAfterLeftArm": {"id": "pantheonRightHand", "handX": 67, "handY": 67}},
     "78": /* Poppy */ {"hair": "white", "longHair": true, "addOnAfterRightArm": {"id": "poppyRightHand", "handX": 40, "handY": 59, "rotation": 165}},
