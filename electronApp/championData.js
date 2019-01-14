@@ -9,6 +9,7 @@ const championData = {
     "432": /* Bard */ {"hair": "none", "hideFace": true, "addOnAfterHead": {"id": "bardHead", "translationX": -15, "translationY": -31}},
     "119": /* Draven */ {"hair": "brown", "longHair": false, "addOnAfterHead": {"id": "dravenHead", "translationX": 14, "translationY": 78, "drawAsHair": true, "hair": "brown"}, "addOnAfterRightArm": {"id": "dravenRightHand", "handX": 101, "handY": 140}, "addOnAfterLeftArm": {"id": "dravenLeftHand", "handX": 29, "handY": 145}},
     "202": /* Jhin */ {"hair": "black", "hideFace": true, "addOnAfterHead": {"id": "jhinHead", "translationX": -10, "translationY": 30}},
+    "429": /* Kalista */ {"hair": "black", "longHair": true, "addOnBeforeShirt": {"id": "kalistaBeforeShirt", "translationX": 10, "translationY": -25}, "addOnAfterShirt": {"id": "kalistaAfterShirt", "translationX": 0, "translationY": 30}},
     "64": /* Lee Sin */ {"hair": "none", "addOnAfterHead": {"id": "leesinHead", "translationX": 0, "translationY": 37}},
     "127": /* Lissandra */ {"hair": "white", "longHair": true, "addOnAfterPants": {"id": "lissandraPants", "translationX": -9, "translationY": 7}},
     "56": /* Nocturne */ {"hair": "black", "addOnAfterRightArm": {"id": "nocturneRightArm", "handX": 70, "handY": 40}, "addOnAfterLeftArm": {"id": "nocturneLeftArm", "handX": 10, "handY": 40}},

@@ -389,7 +389,7 @@ function draw() {
             "layingDown": true
         },
         {
-            "championId": 202,
+            "championId": 429,
             "facialExpression": faceFrustratedImage,
             "leftArmRaised": false,
             "rightArmRaised": false,
@@ -612,6 +612,9 @@ function drawBody(context, champion, character) {
     context.save();
     context.translate(27, headImage.height - 14);
     var hueRotationDegrees = Math.floor(Math.random() * 360);
+    if (champion) {
+        drawAddOn(context, champion.addOnBeforeShirt);
+    }
     drawPants(context, champion);
     drawRightSleeve(context, hueRotationDegrees, champion, character, false);
     drawLeftSleeve(context, hueRotationDegrees, champion, character, false);
