@@ -13,6 +13,7 @@ const championData = {
     "85": /* Kennen */ {"hair": "brown", "addOnAfterRightArm": {"id": "kennenRightHand", "handX": 59, "handY": 82, "rotation": -15}},
     "64": /* Lee Sin */ {"hair": "none", "addOnAfterHead": {"id": "leesinHead", "translationX": 0, "translationY": 37}},
     "127": /* Lissandra */ {"hair": "white", "longHair": true, "addOnAfterPants": {"id": "lissandraPants", "translationX": -9, "translationY": 7}},
+    "99": /* Lux */ {"hair": "blonde", "longHair": true, "addOnAfterLeftArm": {"id": "luxLeftHand", "handX": 32, "handY": 107, "rotation": 30}},
     "54": /* Malphite */ {"hair": "none", "addOnAfterHead": {"id": "malphiteHead", "translationX": -5, "translationY": -67}},
     "56": /* Nocturne */ {"hair": "black", "addOnAfterRightArm": {"id": "nocturneRightArm", "handX": 70, "handY": 40}, "addOnAfterLeftArm": {"id": "nocturneLeftArm", "handX": 10, "handY": 40}},
     "61": /* Orianna */ {"hair": "blonde", "longHair": true, "addOnAfterHead": {"id": "oriannaHead", "translationX": 80, "translationY": -20}},
