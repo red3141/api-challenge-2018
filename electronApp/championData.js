@@ -18,6 +18,7 @@ const championData = {
     "80": /* Pantheon */ {"hair": "black", "addOnAfterLeftArm": {"id": "pantheonRightHand", "handX": 67, "handY": 67}},
     "78": /* Poppy */ {"hair": "white", "longHair": true, "addOnAfterRightArm": {"id": "poppyRightHand", "handX": 40, "handY": 59, "rotation": 165}},
     "555": /* Pyke */ {"hair": "none", "addOnAfterHead": {"id": "pykeHead", "translationX": 4, "translationY": 78}},
+    "33": /* Rammus */ {"hair": "none", "addOnAfterHead": {"id": "rammusHead", "translationX": -3, "translationY": -42}},
     "92": /* Riven */ {"hair": "white", "addOnAfterLeftArm": {"id": "rivenLeftHand", "handX": 17, "handY": 241, "rotation": 95}},
     "13": /* Ryze */ {"hair": "none", "addOnBeforeHead": {"id": "ryzeBeforeHead", "translationX": -5, "translationY": 75}},
     "15": /* Sivir */ {"hair": "black", "longHair": true, "addOnAfterLeftArm": {"id": "sivirLeftHand", "handX": 67, "handY": 60}},
