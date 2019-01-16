@@ -389,7 +389,7 @@ function draw() {
             "layingDown": true
         },
         {
-            "championId": 24,
+            "championId": 21,
             "facialExpression": faceFrustratedImage,
             "leftArmRaised": false,
             "rightArmRaised": false,
@@ -407,7 +407,7 @@ function draw() {
             "layingDown": true
         },
         {
-            "championId": 33,
+            "championId": 24,
             "facialExpression": faceHappyImage,
             "leftArmRaised": false,
             "rightArmRaised": false,

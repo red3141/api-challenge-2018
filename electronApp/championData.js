@@ -17,6 +17,7 @@ const championData = {
     "127": /* Lissandra */ {"hair": "white", "longHair": true, "addOnAfterPants": {"id": "lissandraPants", "translationX": -9, "translationY": 7}},
     "99": /* Lux */ {"hair": "blonde", "longHair": true, "addOnAfterLeftArm": {"id": "luxLeftHand", "handX": 32, "handY": 107, "rotation": 30}},
     "54": /* Malphite */ {"hair": "none", "addOnAfterHead": {"id": "malphiteHead", "translationX": -5, "translationY": -67}},
+    "21": /* Miss Fortune */ {"hair": "red", "longHair": true, "addOnAfterRightArm": {"id": "missFortuneRightHand", "handX": 79, "handY": 37}, "addOnAfterLeftArm": {"id": "missFortuneLeftHand", "handX": 38, "handY": 37}},
     "82": /* Mordekaiser */ {"hair": "grey", "addOnAfterLeftArm": {"id": "mordekaiserLeftArm", "handX": 55, "handY": 210, "rotation": 5}},
     "267": /* Nami */ {"hair": "blonde", "longHair": true, "addOnAfterRightArm": {"id": "namiRightArm", "handX": 42, "handY": 139, "rotation": -70}},
     "56": /* Nocturne */ {"hair": "black", "addOnAfterRightArm": {"id": "nocturneRightArm", "handX": 70, "handY": 40}, "addOnAfterLeftArm": {"id": "nocturneLeftArm", "handX": 10, "handY": 40}},
