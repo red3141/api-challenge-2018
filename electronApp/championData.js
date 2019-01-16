@@ -9,6 +9,7 @@ const championData = {
     "432": /* Bard */ {"hair": "none", "hideFace": true, "addOnAfterHead": {"id": "bardHead", "translationX": -15, "translationY": -31}},
     "119": /* Draven */ {"hair": "brown", "longHair": false, "addOnAfterHead": {"id": "dravenHead", "translationX": 14, "translationY": 78, "drawAsHair": true, "hair": "brown"}, "addOnAfterRightArm": {"id": "dravenRightHand", "handX": 101, "handY": 140}, "addOnAfterLeftArm": {"id": "dravenLeftHand", "handX": 29, "handY": 145}},
     "3": /* Galio */ {"hair": "blonde", "addOnBeforeHead": {"id": "galioBeforeHead", "translationX": -48, "translationY": -35}},
+    "24": /* Jax */ {"hair": "darkPink", "addOnAfterLeftArm": {"id": "jaxLeftHand", "handX": 20, "handY": 96, "rotation": 20}},
     "202": /* Jhin */ {"hair": "black", "hideFace": true, "addOnAfterHead": {"id": "jhinHead", "translationX": -10, "translationY": 30}},
     "429": /* Kalista */ {"hair": "black", "longHair": true, "addOnBeforeShirt": {"id": "kalistaBeforeShirt", "translationX": 10, "translationY": -25}, "addOnAfterShirt": {"id": "kalistaAfterShirt", "translationX": 0, "translationY": 30}},
     "85": /* Kennen */ {"hair": "brown", "addOnAfterRightArm": {"id": "kennenRightHand", "handX": 59, "handY": 82, "rotation": -15}},

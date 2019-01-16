@@ -371,7 +371,7 @@ function prepareImages() {
 function draw() {
     eogStatsBlockDataProcessed = [
         {
-            "championId": 127,
+            "championId": 3,
             "facialExpression": faceDealWithItImage,
             "leftArmRaised": true,
             "rightArmRaised": true,
@@ -389,7 +389,7 @@ function draw() {
             "layingDown": true
         },
         {
-            "championId": 3,
+            "championId": 24,
             "facialExpression": faceFrustratedImage,
             "leftArmRaised": false,
             "rightArmRaised": false,
