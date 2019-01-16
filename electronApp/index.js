@@ -380,7 +380,7 @@ function draw() {
             "layingDown": false
         },
         {
-            "championId": 99,
+            "championId": 267,
             "facialExpression": faceDeadImage,
             "leftArmRaised": Math.random() > 0.5,
             "rightArmRaised": Math.random() > 0.5,
@@ -389,7 +389,7 @@ function draw() {
             "layingDown": true
         },
         {
-            "championId": 82,
+            "championId": 267,
             "facialExpression": faceFrustratedImage,
             "leftArmRaised": false,
             "rightArmRaised": false,

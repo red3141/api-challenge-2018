@@ -16,6 +16,7 @@ const championData = {
     "99": /* Lux */ {"hair": "blonde", "longHair": true, "addOnAfterLeftArm": {"id": "luxLeftHand", "handX": 32, "handY": 107, "rotation": 30}},
     "54": /* Malphite */ {"hair": "none", "addOnAfterHead": {"id": "malphiteHead", "translationX": -5, "translationY": -67}},
     "82": /* Mordekaiser */ {"hair": "grey", "addOnAfterLeftArm": {"id": "mordekaiserLeftArm", "handX": 55, "handY": 210, "rotation": 5}},
+    "267": /* Nami */ {"hair": "blonde", "longHair": true, "addOnAfterRightArm": {"id": "namiRightArm", "handX": 42, "handY": 139, "rotation": -70}},
     "56": /* Nocturne */ {"hair": "black", "addOnAfterRightArm": {"id": "nocturneRightArm", "handX": 70, "handY": 40}, "addOnAfterLeftArm": {"id": "nocturneLeftArm", "handX": 10, "handY": 40}},
     "61": /* Orianna */ {"hair": "blonde", "longHair": true, "addOnAfterHead": {"id": "oriannaHead", "translationX": 80, "translationY": -20}},
     "80": /* Pantheon */ {"hair": "black", "addOnAfterLeftArm": {"id": "pantheonRightHand", "handX": 67, "handY": 67}},
