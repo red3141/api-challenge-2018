@@ -380,7 +380,7 @@ function draw() {
             "layingDown": false
         },
         {
-            "championId": 267,
+            "championId": 150,
             "facialExpression": faceDeadImage,
             "leftArmRaised": Math.random() > 0.5,
             "rightArmRaised": Math.random() > 0.5,
@@ -389,7 +389,7 @@ function draw() {
             "layingDown": true
         },
         {
-            "championId": 150,
+            "championId": 39,
             "facialExpression": faceFrustratedImage,
             "leftArmRaised": false,
             "rightArmRaised": false,
@@ -423,7 +423,7 @@ function draw() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     context.save();
-    context.translate(70, 100);
+    context.translate(70, 200);
     if (eogStatsBlockDataProcessed && eogStatsBlockDataProcessed.length > 0) {
         console.log(eogStatsBlockDataProcessed);
         for (var i = 0; i < eogStatsBlockDataProcessed.length; ++i) {
@@ -507,6 +507,8 @@ function drawHairWithColor(context, hairImage, hairColor) {
         filter = "hue-rotate(100deg) brightness(60%)";
     } else if (hairColor === "orange") {
         filter = "hue-rotate(-200deg) saturate(170%) brightness(130%)";
+    } else if (hairColor === "blue") {
+        filter = "hue-rotate(10deg) saturate(170%) brightness(60%)";
     }
     
     context.filter = filter;
