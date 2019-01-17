@@ -371,7 +371,7 @@ function prepareImages() {
 function draw() {
     eogStatsBlockDataProcessed = [
         {
-            "championId": 3,
+            "championId": 21,
             "facialExpression": faceDealWithItImage,
             "leftArmRaised": true,
             "rightArmRaised": true,
@@ -389,7 +389,7 @@ function draw() {
             "layingDown": true
         },
         {
-            "championId": 21,
+            "championId": 150,
             "facialExpression": faceFrustratedImage,
             "leftArmRaised": false,
             "rightArmRaised": false,
@@ -505,7 +505,9 @@ function drawHairWithColor(context, hairImage, hairColor) {
         filter = "hue-rotate(100deg)";
     } else if (hairColor === "darkPink") {
         filter = "hue-rotate(100deg) brightness(60%)";
-    } 
+    } else if (hairColor === "orange") {
+        filter = "hue-rotate(-200deg) saturate(170%) brightness(130%)";
+    }
     
     context.filter = filter;
     context.drawImage(hairImage, 0, 0);
