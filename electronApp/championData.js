@@ -7,6 +7,7 @@ const championData = {
     "1": /* Annie */ {"hair": "pink", "longHair": true, "addOnAfterHead": {"id": "annieHead", "translationX": 3, "translationY": -13}, "addOnAfterRightArm": {"id": "annieRightHand", "handX": 42, "handY": 8}},
     "22": /* Ashe */ {"hair": "white", "longHair": true, "addOnAfterRightArm": {"id": "asheRightHand", "handX": 54, "handY": 132}},
     "432": /* Bard */ {"hair": "none", "hideFace": true, "addOnAfterHead": {"id": "bardHead", "translationX": -15, "translationY": -31}},
+    "42": /* Corki */ {"hair": "none", "addOnAfterHead": {"id": "corkiHead", "translationX": -24, "translationY": -34}},
     "119": /* Draven */ {"hair": "brown", "longHair": false, "addOnAfterHead": {"id": "dravenHead", "translationX": 14, "translationY": 78, "drawAsHair": true, "hair": "brown"}, "addOnAfterRightArm": {"id": "dravenRightHand", "handX": 101, "handY": 140}, "addOnAfterLeftArm": {"id": "dravenLeftHand", "handX": 29, "handY": 145}},
     "3": /* Galio */ {"hair": "blonde", "addOnBeforeHead": {"id": "galioBeforeHead", "translationX": -48, "translationY": -35}},
     "150": /* Gnar */ {"hair": "orange", "addOnAfterHead": {"id": "gnarHead", "translationX": 10, "translationY": -40}},
