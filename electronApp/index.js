@@ -389,7 +389,7 @@ function draw() {
             "layingDown": true
         },
         {
-            "championId": 39,
+            "championId": 81,
             "facialExpression": faceFrustratedImage,
             "leftArmRaised": false,
             "rightArmRaised": false,
@@ -654,7 +654,20 @@ function drawRightArm(context, champion, armType, armRaised, drawAddOns) {
         context.drawImage(armData[armType].image, 0, 0);
     }
     if (champion && drawAddOns) {
-        drawArmAddOn(context, armType, armRaised ? -90 : 0, champion.addOnAfterRightArm);
+        var armCompensationRotation = armRaised ? -90 : 0;
+        // Ezreal power glove special case
+        if (champion.addOnAfterRightArm && champion.addOnAfterRightArm.id === "ezrealRightHand") {
+            if (!armRaised && armType === "rightArmBent") {
+                armCompensationRotation = 110;
+            } else if (armRaised) {
+                if (armType === "rightArmStraight") {
+                    armCompensationRotation = 0;
+                } else if (armType === "rightArmBent") {
+                    armCompensationRotation = 120;
+                }
+            }
+        }
+        drawArmAddOn(context, armType, armCompensationRotation, champion.addOnAfterRightArm);
     }
     context.restore();
 }
