@@ -133,6 +133,7 @@ function handleJsonApiEvent(data) {
 var championMasteryUpdateData;
 //var eogStatsBlockData;
 var eogStatsBlockDataProcessed = [];
+var eogDidWin = false;
 
 function handleChampionMasteryUpdates(data) {
     //console.log("ChampionMasteryUpdates: " + data);
@@ -156,6 +157,7 @@ function processEogStatsBlockData(data) {
     var teams = data.data.teams;
     var playersTeam = teams[0].isPlayerTeam ? teams[0] : teams[1];
     var didPlayerWin = playersTeam.isWinningTeam;
+    eogDidWin = didPlayerWin;
     var teamAssists = playersTeam.stats.ASSISTS;
     var teamKills = playersTeam.stats.CHAMPIONS_KILLED;
     var teamDeaths = playersTeam.stats.NUM_DEATHS;
@@ -167,7 +169,8 @@ function processEogStatsBlockData(data) {
     
     eogStatsBlockDataProcessed = [];
     
-    for (var player in playersTeam.players) {
+    for (var i = 0; i < playersTeam.players.length; ++i) {
+        var player = playersTeam.players[i];
         var processedPlayer = {};
         processedPlayer.championId = player.championId;
         var celebrationLevel = 0;
@@ -337,6 +340,8 @@ var faceHappyImage;
 var faceDeadImage;
 var faceFrustratedImage;
 var faceDealWithItImage;
+var backgroundRedImage;
+var backgroundBlueImage;
 var armData;
 
 function prepareImages() {
@@ -359,16 +364,20 @@ function prepareImages() {
     faceFrustratedImage = document.getElementById("faceFrustratedImage");
     faceDealWithItImage = document.getElementById("faceDealWithItImage");
     
+    backgroundRedImage = document.getElementById("backgroundRed");
+    backgroundBlueImage = document.getElementById("backgroundBlue");
+    
     armData = {"rightArmStraight": {"image": rightArmImage, "translationX": -30, "translationY": 22, "handX": 14, "handY": 60},
                "leftArmStraight": {"image": leftArmImage, "translationX": 7, "translationY": 20, "handX": 32, "handY": 60},
                "rightArmBent": {"image": rightArmBentImage, "translationX": -34, "translationY": 0, "handX": 14, "handY": 10, "rotation": 0},
                "leftArmBent": {"image": leftArmBentImage, "translationX": 7, "translationY": 0, "handX": 35, "handY": 10, "rotation": 0}};
     
     // uncomment this line to draw right away, instead of waiting for the end game stats to be ready
-    draw();
+    //draw();
 }
 
 function draw() {
+    /*eogDidWin = false;
     eogStatsBlockDataProcessed = [
         {
             "championId": 21,
@@ -386,7 +395,7 @@ function draw() {
             "rightArmRaised": Math.random() > 0.5,
             "leftArm": "leftArmStraight",
             "rightArm": "rightArmStraight",
-            "layingDown": true
+            "layingDown": false
         },
         {
             "championId": 81,
@@ -404,7 +413,7 @@ function draw() {
             "rightArmRaised": Math.random() > 0.5,
             "leftArm": "leftArmStraight",
             "rightArm": "rightArmStraight",
-            "layingDown": true
+            "layingDown": false
         },
         {
             "championId": 24,
@@ -415,7 +424,7 @@ function draw() {
             "rightArm": "rightArmBent",
             "layingDown": false
         },
-    ];
+    ];*/
     
     console.log("DRAWING");
     var canvas = document.getElementById("canvas");
@@ -423,7 +432,13 @@ function draw() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     context.save();
-    context.translate(70, 200);
+    if (eogDidWin) {
+        context.drawImage(backgroundRedImage, 0, 0); 
+    } else {
+        context.drawImage(backgroundBlueImage, 0, 0); 
+    }
+    
+    context.translate(170, 300);
     if (eogStatsBlockDataProcessed && eogStatsBlockDataProcessed.length > 0) {
         console.log(eogStatsBlockDataProcessed);
         for (var i = 0; i < eogStatsBlockDataProcessed.length; ++i) {
@@ -443,7 +458,10 @@ function draw() {
             }
             drawCharacter(context, character);
             context.restore();
-            context.translate(170, 0);
+            context.translate(180, 0);
+            if (i == 1) {
+                context.translate(240, 0);
+            }
         }
     }
 
