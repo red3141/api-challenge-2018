@@ -169,6 +169,8 @@ function processEogStatsBlockData(data) {
     
     eogStatsBlockDataProcessed = [];
     
+    console.log("" + playersTeam.players.toString());
+    
     for (var i = 0; i < playersTeam.players.length; ++i) {
         var player = playersTeam.players[i];
         var processedPlayer = {};
@@ -517,6 +519,8 @@ function drawHairWithColor(context, hairImage, hairColor) {
         filter = "saturate(0%) brightness(130%)";
     } else if (hairColor === "red") {
         filter = "hue-rotate(-230deg) saturate(170%)";
+    } else if (hairColor === "darkRed") {
+        filter = "hue-rotate(-230deg) saturate(150%) brightness(75%)";
     } else if (hairColor === "purple") {
         filter = "hue-rotate(40deg) saturate(120%) brightness(75%)";
     } else if (hairColor === "pink") {
@@ -527,6 +531,16 @@ function drawHairWithColor(context, hairImage, hairColor) {
         filter = "hue-rotate(-200deg) saturate(170%) brightness(130%)";
     } else if (hairColor === "blue") {
         filter = "hue-rotate(10deg) saturate(170%) brightness(60%)";
+    } else if (hairColor === "green") {
+        filter = "hue-rotate(-70deg) brightness(90%)";
+    } else if (hairColor === "spookyGreen") {
+        filter = "hue-rotate(-70deg) brightness(140%)";
+    } else if (hairColor === "lightGreen") {
+        filter = "hue-rotate(-110deg) brightness(130%)";
+    } else if (hairColor === "tan") {
+        filter = "hue-rotate(-170deg) saturate(30%) brightness(160%)";
+    } else if (hairColor === "lightBlue") {
+        filter = "hue-rotate(-10deg) saturate(130%) brightness(130%)";
     }
     
     context.filter = filter;
@@ -591,7 +605,7 @@ function drawCharacter(context, character) {
     }
     
     context.drawImage(headImage, 0, 0);
-    if (!champion.hideFace) {
+    if (!champion || !champion.hideFace) {
         drawFacialExpression(context, character);
     }
     drawHair(context, hairColor);
