@@ -6,6 +6,14 @@ Hello, friends and askers of questions!
 
 This is Team Photo! In a nutshell, it's an app created to generate a photo of your team after a game of League of Legends.
 
+Example image (not from an actual game):
+![Example Image](https://raw.githubusercontent.com/red3141/api-challenge-2018/master/exampleImage1.png)
+
+Example image from an actual game that went... well:
+![Example Image](https://raw.githubusercontent.com/red3141/api-challenge-2018/master/actualGameImage.png)
+
+
+
 ## I'm in! How do I use it?
 
 Start by opening the League of Legends client. It won't work unless the League of Legends client is opened before Team Photo.
