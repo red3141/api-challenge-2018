@@ -379,11 +379,11 @@ function prepareImages() {
 }
 
 function draw() {
-    /*eogDidWin = false;
+    /*eogDidWin = true;
     eogStatsBlockDataProcessed = [
         {
-            "championId": 21,
-            "facialExpression": faceDealWithItImage,
+            "championId": 33,
+            "facialExpression": faceHappyImage,
             "leftArmRaised": true,
             "rightArmRaised": true,
             "leftArm": "leftArmStraight",
@@ -391,16 +391,7 @@ function draw() {
             "layingDown": false
         },
         {
-            "championId": 150,
-            "facialExpression": faceDeadImage,
-            "leftArmRaised": Math.random() > 0.5,
-            "rightArmRaised": Math.random() > 0.5,
-            "leftArm": "leftArmStraight",
-            "rightArm": "rightArmStraight",
-            "layingDown": false
-        },
-        {
-            "championId": 81,
+            "championId": 103,
             "facialExpression": faceFrustratedImage,
             "leftArmRaised": false,
             "rightArmRaised": false,
@@ -409,21 +400,30 @@ function draw() {
             "layingDown": false
         },
         {
-            "championId": 42,
-            "facialExpression": faceDeadImage,
-            "leftArmRaised": Math.random() > 0.5,
-            "rightArmRaised": Math.random() > 0.5,
+            "championId": 32,
+            "facialExpression": faceHappyImage,
+            "leftArmRaised": false,
+            "rightArmRaised": false,
             "leftArm": "leftArmStraight",
             "rightArm": "rightArmStraight",
             "layingDown": false
         },
         {
-            "championId": 24,
+            "championId": 134,
             "facialExpression": faceHappyImage,
             "leftArmRaised": false,
             "rightArmRaised": false,
             "leftArm": "leftArmBent",
             "rightArm": "rightArmBent",
+            "layingDown": false
+        },
+        {
+            "championId": 1,
+            "facialExpression": faceDealWithItImage,
+            "leftArmRaised": true,
+            "rightArmRaised": true,
+            "leftArm": "leftArmStraight",
+            "rightArm": "rightArmStraight",
             "layingDown": false
         },
     ];*/
