@@ -9,6 +9,9 @@ This is Team Photo! In a nutshell, it's an app created to generate a photo of yo
 Example image (not from an actual game):
 ![Example Image](https://raw.githubusercontent.com/red3141/api-challenge-2018/master/exampleImage1.png)
 
+Example image from an actual game that went well:
+![Example Image](https://raw.githubusercontent.com/red3141/api-challenge-2018/master/actualGameImage2.png)
+
 Example image from an actual game that went... well:
 ![Example Image](https://raw.githubusercontent.com/red3141/api-challenge-2018/master/actualGameImage.png)
 
@@ -94,6 +97,6 @@ And finally, thanks to Riot Git Gene and the rest of the DevRel team at Riot for
 
 Yup, you can find that [here](https://docs.google.com/document/d/1K3X_EEGKZ8Ezmn1r2sNoF4KDeLytKdtctmRqJZTjnzU/edit?usp=sharing).
 
-## And, lastly, any legal jibberjabber you should have included somewhere in here?
+## And, lastly, any legal jibber jabber you should have included somewhere in here?
 
 Team Photo was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.
