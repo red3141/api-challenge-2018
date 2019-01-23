@@ -41,6 +41,8 @@ There were a number of points of inspiration. First, we thought we could provide
 
 The two primary pieces of technology we used to create Team Photo are [Electron](https://electronjs.org/), to allow us to run a webpage as a desktop app, and the HTML5 Canvas, to draw the image.
 
+To get the end of game data from the League of Legends client, we used the LCU APIs, specifically, the `lol-end-of-game` API.
+
 ## What challenges did you have to deal with when creating this project?
 
 On a time-limited, art-focused project like this, one of the main challenges is just the amount of art that needs to be created. To help deal with this, there's a definite desire to reuse iamges whenever possible, so we had to find some interesting ways to do that.
